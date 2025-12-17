@@ -1,4 +1,3 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "../pages/home";
 import Products from "../pages/products";
 import Categories from "../pages/categories";
@@ -7,7 +6,7 @@ import CategoryEdit from "../pages/categoryEdit";
 import ErrorPage from "../pages/error";
 import App from "../App";
 
-const router = createBrowserRouter([
+const route = [
   {
     path: "/",
     element: <App />,
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "proudcts",
+        path: "products",
         element: <Products />,
       },
       {
@@ -35,6 +34,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
 
-export default router;
+export default route;
