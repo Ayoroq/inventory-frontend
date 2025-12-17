@@ -1,9 +1,12 @@
+import styles from '../styles.module.css'
+
 export default function Nav() {
   return (
-    <div className="nav">
-      This is the nav bar
-      <div className="nav-links">
-        <a href="/">Home</a>
+    <div className={styles.nav}>
+      <div className={styles.logo} >
+        <a href="/"> Inventory</a>
+      </div>
+      <div className={styles.links}>
         <a href="/products">Products</a>
         <a href="/categories">Categories</a>
       </div>

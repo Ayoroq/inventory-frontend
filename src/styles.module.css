@@ -1,0 +1,22 @@
+/* Navbar*/
+.nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav a{
+    text-decoration: none;
+    color: black;
+}
+
+.links{
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 620px) {
+    .links{
+        flex-direction: column;
+    }
+}
