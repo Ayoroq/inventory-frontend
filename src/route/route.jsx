@@ -4,13 +4,14 @@ import Products from "../pages/products";
 import Categories from "../pages/categories";
 import ProductEdit from "../pages/productEdit";
 import CategoryEdit from "../pages/categoryEdit";
+import ErrorPage from "../pages/error";
 import App from "../App";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <div>Oops! There was an error.</div>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

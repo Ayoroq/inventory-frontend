@@ -1,4 +1,4 @@
-export default function nav() {
+export default function Nav() {
   return (
     <div className="nav">
       This is the nav bar
