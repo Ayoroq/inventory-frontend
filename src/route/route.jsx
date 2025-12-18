@@ -25,11 +25,11 @@ const route = [
         element: <Categories />,
       },
       {
-        path: "product/:id",
+        path: "products/:id",
         element: <ProductEdit />,
       },
       {
-        path: "category/:id",
+        path: "categories/:id",
         element: <CategoryEdit />,
       },
     ],

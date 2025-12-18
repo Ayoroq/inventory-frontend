@@ -14,18 +14,19 @@ export default function Products() {
   });
 
   const handleSort = (key) => {
-  const direction = sortConfig.key === key && sortConfig.direction === "asc" ? "desc" : "asc";
-  
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (direction === "asc") {
-      return a[key] > b[key] ? 1 : -1;
-    }
-    return a[key] < b[key] ? 1 : -1;
-  });
-  
-  setFilteredProducts(sortedProducts);
-  setSortConfig({ key, direction });
-    };
+    const direction =
+      sortConfig.key === key && sortConfig.direction === "asc" ? "desc" : "asc";
+
+    const sortedProducts = [...filteredProducts].sort((a, b) => {
+      if (direction === "asc") {
+        return a[key] > b[key] ? 1 : -1;
+      }
+      return a[key] < b[key] ? 1 : -1;
+    });
+
+    setFilteredProducts(sortedProducts);
+    setSortConfig({ key, direction });
+  };
   useEffect(() => {
     async function getProducts() {
       try {
