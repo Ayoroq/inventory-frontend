@@ -46,6 +46,11 @@
     background-color: var(--out-of-stock);
 }
 
+/* products */
+.col{
+    cursor: pointer;
+}
+
 @media (max-width: 620px) {
     .links{
         flex-direction: column;

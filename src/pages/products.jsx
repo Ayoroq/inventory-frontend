@@ -1,9 +1,26 @@
 import { useEffect, useState } from "react";
 import Card from "../components/card.jsx";
+import styles from "../styles.module.css";
 
 export default function Products() {
   const API_URL = import.meta.env.VITE_BACKEND_URL;
   const [products, setProducts] = useState([]);
+  const [sortConfig, setSortConfig] = useState({ key: 'name', direction: "asc" });
+
+  const handleSort = (key) => {
+    const direction =
+      sortConfig.key === key && sortConfig.direction === "asc" ? "desc" : "asc";
+
+    const sortedProducts = [...products].sort((a, b) => {
+      if (direction === "asc") {
+        return a[key] > b[key] ? 1 : -1;
+      }
+      return a[key] < b[key] ? 1 : -1;
+    });
+
+    setProducts(sortedProducts);
+    setSortConfig({ key, direction });
+  };
   useEffect(() => {
     async function getProducts() {
       try {
@@ -23,9 +40,15 @@ export default function Products() {
       <table>
         <thead>
           <tr>
-            <th scope="col">Book Name</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
+            <th onClick={() => handleSort('name')} scope="col" className={styles.col}>
+              Book Name
+            </th>
+            <th onClick={() => handleSort('quantity')} scope="col" className={styles.col}>
+              Quantity
+            </th>
+            <th onClick={() => handleSort('price')} scope="col" className={styles.col}>
+              Price
+            </th>
           </tr>
         </thead>
         <tbody>
