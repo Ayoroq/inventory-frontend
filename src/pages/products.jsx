@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Card from "../components/card.jsx";
 import styles from "../styles.module.css";
 
+const API_URL = import.meta.env.VITE_BACKEND_URL;
+
 export default function Products() {
-  const API_URL = import.meta.env.VITE_BACKEND_URL;
   const [products, setProducts] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: 'name', direction: "asc" });
 

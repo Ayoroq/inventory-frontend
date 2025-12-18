@@ -51,6 +51,17 @@
     cursor: pointer;
 }
 
+/* Category */
+.categoryContainer{
+    list-style: none;
+    text-align: left;
+}
+
+.category{
+    cursor: pointer;
+    margin: 0.5rem 0;
+}
+
 @media (max-width: 620px) {
     .links{
         flex-direction: column;
