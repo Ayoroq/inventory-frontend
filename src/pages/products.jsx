@@ -49,6 +49,9 @@ export default function Products() {
             <th onClick={() => handleSort('price')} scope="col" className={styles.col}>
               Price
             </th>
+            <th onClick={() => handleSort('categories')} scope="col" className={styles.col}>
+              Categories
+            </th>
           </tr>
         </thead>
         <tbody>

@@ -6,6 +6,7 @@ export default function Card({ props }) {
       <td>{props.name}</td>
       <td>{props.quantity}</td>
       <td>${props.price}</td>
+      <td>{props.categories}</td>
     </tr>
   );
 }
