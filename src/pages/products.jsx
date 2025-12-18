@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Card from "../components/card.jsx";
 
 export default function Products() {
   const API_URL = import.meta.env.VITE_BACKEND_URL;
@@ -18,17 +19,21 @@ export default function Products() {
 
   return (
     <div>
-      <h1>Products</h1>
-      <p>Here are the products</p>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-          </li>
-        ))}
-      </ul>
+      <h1>Books Inventory</h1>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <Card key={product.id} props={product} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

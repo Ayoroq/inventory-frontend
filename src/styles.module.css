@@ -1,3 +1,8 @@
+:root{
+    --in-stock: #a6feba;
+    --out-of-stock: #fbabb3;
+}
+
 /* Navbar*/
 .nav{
     display: flex;
@@ -22,6 +27,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Card */
+.card{
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.stock{
+    background-color: var(--in-stock);
+}
+.no-stock{
+    background-color: var(--out-of-stock);
 }
 
 @media (max-width: 620px) {
