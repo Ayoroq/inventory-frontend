@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import styles from "../styles.module.css";
+
 export default function ProductEdit() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -11,6 +12,17 @@ export default function ProductEdit() {
     price: 0.00,
     categories: "",
   });
+
+  useEffect(() => {
+  if (product) {
+    setFormData({
+      name: product.name,
+      quantity: product.quantity,
+      price: product.price,
+      categories: product.categories,
+    });
+  }
+}, [product]);
 
   useEffect(() => {
     async function fetchProduct() {
@@ -39,6 +51,11 @@ export default function ProductEdit() {
     fetchProduct();
   }, [id]);
 
+  function submitHandler(e) {
+    e.preventDefault();
+    
+  }
+
   return (
     <>
       {loading ? (
@@ -48,22 +65,22 @@ export default function ProductEdit() {
       ) : (
         <div className={styles.editContainer}>
           <h1>Edit Product: {product.name}</h1>
-          <form className={styles.editForm}>
+          <form className={styles.editForm} onSubmit={submitHandler}>
             <label>
               Name:
-              <input type="text" defaultValue={product.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}/>
+              <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}/>
             </label>
             <label>
               Quantity:
-              <input type="number" defaultValue={product.quantity} onChange={(e) => setFormData({ ...formData, quantity: e.target.value })} />
+              <input type="number" required value={formData.quantity} onChange={(e) => setFormData({ ...formData, quantity: e.target.value })} />
             </label>
             <label>
               Price:
-              <input type="number" step="0.01" defaultValue={product.price} onChange={(e) => setFormData({ ...formData, price: e.target.value })} />
+              <input type="number" required step="0.01" value={formData.price} onChange={(e) => setFormData({ ...formData, price: e.target.value })} />
             </label>
             <label>
               Categories:
-              <input type="text" defaultValue={product.categories} onChange={(e) => setFormData({ ...formData, categories: e.target.value })} />
+              <input type="text" required value={formData.categories} onChange={(e) => setFormData({ ...formData, categories: e.target.value })} />
             </label>
             <button className={styles.editButton} type="submit">Save Changes</button>
           </form>
