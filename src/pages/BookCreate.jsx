@@ -21,7 +21,7 @@ export default function BookCreate() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-
+      
       navigate("/books");
     } catch (error) {
       console.log(error);
