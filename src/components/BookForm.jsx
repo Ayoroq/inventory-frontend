@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import styles from "../styles.module.css";
 
-export default function BookForm({ initialData, onSubmit, submitButtonText, submitAction }) {
+export default function BookForm({
+  initialData,
+  onSubmit,
+  submitButtonText,
+  submitAction,
+}) {
   const [formData, setFormData] = useState({
     name: "",
     quantity: 0,
@@ -29,9 +34,9 @@ export default function BookForm({ initialData, onSubmit, submitButtonText, subm
   };
 
   return (
-    <form className={styles.editForm} onSubmit={handleSubmit}>
-      <label>
-        Name:
+    <form className={styles.bookEditForm} onSubmit={handleSubmit}>
+      <p>
+        <label>Name</label>
         <input
           type="text"
           name="name"
@@ -39,9 +44,9 @@ export default function BookForm({ initialData, onSubmit, submitButtonText, subm
           value={formData.name}
           onChange={handleChange}
         />
-      </label>
-      <label>
-        Quantity:
+      </p>
+      <p>
+        <label>Quantity:</label>
         <input
           type="number"
           name="quantity"
@@ -49,9 +54,9 @@ export default function BookForm({ initialData, onSubmit, submitButtonText, subm
           value={formData.quantity}
           onChange={handleChange}
         />
-      </label>
-      <label>
-        Price:
+      </p>
+      <p>
+        <label>Price:</label>
         <input
           type="number"
           name="price"
@@ -60,18 +65,18 @@ export default function BookForm({ initialData, onSubmit, submitButtonText, subm
           value={formData.price}
           onChange={handleChange}
         />
-      </label>
-      <label>
-        Description:
+      </p>
+      <p>
+        <label>Description:</label>
         <textarea
           name="description"
           value={formData.description}
           required
           onChange={handleChange}
         />
-      </label>
-      <label>
-        Categories:
+      </p>
+      <p>
+        <label>Categories:</label>
         <input
           type="text"
           name="categories"
@@ -79,8 +84,11 @@ export default function BookForm({ initialData, onSubmit, submitButtonText, subm
           value={formData.categories}
           onChange={handleChange}
         />
-      </label>
-      <button className={`${styles.formActionButton} ${styles[submitAction]}`} type="submit">
+      </p>
+      <button
+        className={`${styles.formActionButton} ${styles[submitAction]}`}
+        type="submit"
+      >
         {submitButtonText}
       </button>
     </form>
