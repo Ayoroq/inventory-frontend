@@ -53,7 +53,7 @@ export default function BookEdit() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      navigate("/products");
+      navigate("/books");
     } catch (error) {
       console.log(error);
       alert("Failed to update book.");

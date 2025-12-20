@@ -1,96 +1,113 @@
-:root{
-    --in-stock: #a6feba;
-    --out-of-stock: #fbabb3;
+:root {
+  --in-stock: #a6feba;
+  --out-of-stock: #fbabb3;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05) translateY(-3px);
 }
 
 /* Navbar*/
-.nav{
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.nav a{
-    text-decoration: none;
-    color: black;
+.nav a {
+  text-decoration: none;
+  color: black;
 }
 
-.links{
-    display: flex;
-    gap: 1rem;
+.links {
+  display: flex;
+  gap: 1rem;
 }
 
 /* Home */
-.home{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeBooksBtn {
+  background-color: #16ba00;
 }
 
 /* Card */
-.card{
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.stock{
-    background-color: var(--in-stock);
+.stock {
+  background-color: var(--in-stock);
 }
-.no-stock{
-    background-color: var(--out-of-stock);
+.no-stock {
+  background-color: var(--out-of-stock);
 }
 
 /* products */
-.col{
-    cursor: pointer;
+.col {
+  cursor: pointer;
 }
 
-.addBtn{
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.addBtn {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Category */
-.categoryContainer{
-    list-style: none;
-    text-align: left;
+.categoryContainer {
+  list-style: none;
+  text-align: left;
 }
 
-.category{
-    cursor: pointer;
-    margin: 0.5rem 0;
+.category {
+  cursor: pointer;
+  margin: 0.5rem 0;
 }
 
 /* Form */
-.formActionButton{
-    padding: 0.5rem 1rem;
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.formActionButton {
+  padding: 0.5rem 1rem;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.formActionButton:hover{
-    transform: scale(1.05) translateY(-3px);
-}   
-.edit{
-    background-color: #f0ad4e;
+.formActionButton:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+.edit {
+  background-color: #f0ad4e;
 }
 
 @media (max-width: 620px) {
-    .links{
-        flex-direction: column;
-    }
+  .links {
+    flex-direction: column;
+  }
 }
