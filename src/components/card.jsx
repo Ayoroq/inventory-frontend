@@ -1,7 +1,7 @@
 import styles from "../styles.module.css";
 import { useNavigate } from "react-router";
 
-export default function Card({ props }) {
+export default function Card({ props, onDelete }) {
   const navigate = useNavigate();
   return (
     <tr
@@ -14,13 +14,17 @@ export default function Card({ props }) {
       <td>{props.quantity}</td>
       <td>${props.price}</td>
       <td>{props.categories}</td>
-      <td className={styles.deleteIconContainer}>
+      <td>
         <svg
           width="20"
           height="20"
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          onClick={(e) => {
+            e.stopPropagation();
+            onDelete(props.id);
+          }}
         >
           <g id="Material Symbols Icon (1) 1">
             <path

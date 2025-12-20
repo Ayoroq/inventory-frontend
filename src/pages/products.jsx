@@ -48,6 +48,22 @@ export default function Products() {
     setFilteredProducts(filtered);
   }, [searchTerm, products]);
 
+  async function deleteProduct(id){
+    try {
+        const response = await fetch(`${API_URL}/products/${id}`, {
+            method: "DELETE",
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const updatedProducts = products.filter((product) => product.id !== id);
+        setProducts(updatedProducts);
+        setFilteredProducts(updatedProducts);
+    } catch (error) {
+        console.error(error);
+    }
+  }
+
   return (
     <div>
       <h1>Books Inventory</h1>
@@ -101,7 +117,7 @@ export default function Products() {
         </thead>
         <tbody>
           {filteredProducts.map((filteredProduct) => (
-            <Card key={filteredProduct.id} props={filteredProduct} />
+            <Card key={filteredProduct.id} props={filteredProduct} onDelete={deleteProduct} />
           ))}
         </tbody>
       </table>
