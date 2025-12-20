@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import styles from "../styles.module.css";
 
-export default function CategoryForm({ initialData, onSubmit, submitButtonText, submitAction }) {
+export default function CategoryForm({
+  initialData,
+  onSubmit,
+  submitButtonText,
+  submitAction,
+}) {
   const [formData, setFormData] = useState({
-    name: ""
+    name: "",
   });
 
   useEffect(() => {
@@ -25,9 +30,9 @@ export default function CategoryForm({ initialData, onSubmit, submitButtonText, 
   };
 
   return (
-    <form className={styles.editForm} onSubmit={handleSubmit}>
-      <label>
-        Name:
+    <form className={styles.categoryEditForm} onSubmit={handleSubmit}>
+      <p>
+        <label>Name:</label>
         <input
           type="text"
           name="name"
@@ -35,10 +40,13 @@ export default function CategoryForm({ initialData, onSubmit, submitButtonText, 
           value={formData.name}
           onChange={handleChange}
         />
-      </label>
-       <button className={`${styles.formActionButton} ${styles[submitAction]}`} type="submit">
-              {submitButtonText}
-            </button>
+      </p>
+      <button
+        className={`${styles.formActionButton} ${styles[submitAction]}`}
+        type="submit"
+      >
+        {submitButtonText}
+      </button>
     </form>
   );
 }

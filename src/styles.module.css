@@ -161,19 +161,28 @@ textarea {
   width: fixed-;
 }
 
-.bookEditForm {
+.bookEditForm, .categoryEditForm {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  padding-top: 2rem;
 }
 
-.bookEditForm p{
+
+.bookEditForm p, .categoryEditForm p {
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+}
+
+/* Search */
+
+.search{
+  width: 100%;
+  max-width: 400px;
 }
 
 @media (max-width: 620px) {
