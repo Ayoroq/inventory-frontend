@@ -101,11 +101,18 @@ tr:hover {
 .categoryContainer {
   list-style: none;
   text-align: left;
+  padding: 0;
+  padding-top: 3rem;
+  margin: 0;
 }
 
 .category {
   cursor: pointer;
-  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Form */
