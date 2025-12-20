@@ -1,9 +1,10 @@
-import { useParams } from "react-router";
+import { useParams,useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import styles from "../styles.module.css";
 
 export default function ProductEdit() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
@@ -74,7 +75,7 @@ export default function ProductEdit() {
 
         const data = await response.json();
         setProduct(data);
-        alert("Product updated successfully!");
+        navigate("/products");
       } catch (error) {
         console.log(error);
         alert("Failed to update product.");
