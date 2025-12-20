@@ -25,8 +25,7 @@ export default function Categories() {
       <p>Here you can see all the book categories</p>
       <p>There are {categories.length} categories</p>
       <button
-        className={`${styles.addBtn} ${styles.btn}`}
-        onClick={() => navigate("/categories/new")}
+        className={`${styles.addBtn} ${styles.btn}`} onClick={() => navigate("/categories/new")}
       >
         Add new category
       </button>

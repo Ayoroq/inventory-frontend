@@ -85,7 +85,7 @@ export default function Books() {
         <p>Total Books: {filteredProducts.length}</p>
         <button className={`${styles.addBtn} ${styles.btn}`} onClick={() => navigate("/books/new")}>Add new book</button>
       </div>
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th
