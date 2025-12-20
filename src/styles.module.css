@@ -51,6 +51,15 @@
     cursor: pointer;
 }
 
+.addBtn{
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* Category */
 .categoryContainer{
     list-style: none;

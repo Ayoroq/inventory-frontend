@@ -5,7 +5,7 @@ export default function Card({ props, onDelete }) {
   const navigate = useNavigate();
   return (
     <tr
-      onClick={() => navigate(`/products/${props.id}`)}
+      onClick={() => navigate(`/products/edit/${props.id}`)}
       className={`${styles.card} ${
         props.quantity > 0 ? styles.stock : styles["no-stock"]
       }`}

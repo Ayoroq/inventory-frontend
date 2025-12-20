@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import {useNavigate} from "react-router";
 import Card from "../components/card.jsx";
 import styles from "../styles.module.css";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function Products() {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -81,6 +83,7 @@ export default function Products() {
       </section>
       <div>
         <p>Total Books: {filteredProducts.length}</p>
+        <button className={styles.addBtn} onClick={() => navigate("/products/new")}>Add new book</button>
       </div>
       <table>
         <thead>

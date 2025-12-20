@@ -2,6 +2,7 @@ import Home from "../pages/home";
 import Products from "../pages/products";
 import Categories from "../pages/categories";
 import ProductEdit from "../pages/productEdit";
+import ProductCreate from "../pages/productCreate";
 import CategoryEdit from "../pages/categoryEdit";
 import ErrorPage from "../pages/error";
 import App from "../App";
@@ -21,11 +22,15 @@ const route = [
         element: <Products />,
       },
       {
+        path: "products/new",
+        element: <ProductCreate />,
+      },
+      {
         path: "categories",
         element: <Categories />,
       },
       {
-        path: "products/:id",
+        path: "products/edit/:id",
         element: <ProductEdit />,
       },
       {
