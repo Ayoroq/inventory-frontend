@@ -35,6 +35,7 @@ export default function ProductCreate() {
       <ProductForm
         onSubmit={submitHandler}
         submitButtonText="Add book"
+        submitAction="create"
       />
     </div>
   );

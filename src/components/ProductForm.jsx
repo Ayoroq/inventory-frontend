@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../styles.module.css";
 
-export default function ProductForm({ initialData, onSubmit, submitButtonText }) {
+export default function ProductForm({ initialData, onSubmit, submitButtonText, submitAction }) {
   const [formData, setFormData] = useState({
     name: "",
     quantity: 0,
@@ -80,7 +80,7 @@ export default function ProductForm({ initialData, onSubmit, submitButtonText })
           onChange={handleChange}
         />
       </label>
-      <button className={styles.editButton} type="submit">
+      <button className={`${styles.formActionButton} ${styles[submitAction]}`} type="submit">
         {submitButtonText}
       </button>
     </form>

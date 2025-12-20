@@ -71,6 +71,24 @@
     margin: 0.5rem 0;
 }
 
+/* Form */
+.formActionButton{
+    padding: 0.5rem 1rem;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.formActionButton:hover{
+    transform: scale(1.05) translateY(-3px);
+}   
+.edit{
+    background-color: #f0ad4e;
+}
+
 @media (max-width: 620px) {
     .links{
         flex-direction: column;

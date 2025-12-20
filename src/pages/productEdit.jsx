@@ -73,6 +73,7 @@ export default function ProductEdit() {
             initialData={product}
             onSubmit={submitHandler}
             submitButtonText="Save Changes"
+            submitAction="edit"
           />
         </div>
       )}
