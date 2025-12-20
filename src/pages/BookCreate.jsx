@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router";
 import styles from "../styles.module.css";
-import ProductForm from "../components/ProductForm.jsx";
+import BookForm from "../components/BookForm.jsx";
 
-export default function ProductCreate() {
+export default function BookCreate() {
   const navigate = useNavigate();
 
   async function submitHandler(formData) {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/products`,
+        `${import.meta.env.VITE_BACKEND_URL}/books`,
         {
           method: "POST",
           headers: {
@@ -22,17 +22,17 @@ export default function ProductCreate() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      navigate("/products");
+      navigate("/books");
     } catch (error) {
       console.log(error);
       alert("Failed to add book.");
     }
-  };
+  }
 
   return (
     <div className={styles.editContainer}>
       <h1>Add a New Book</h1>
-      <ProductForm
+      <BookForm
         onSubmit={submitHandler}
         submitButtonText="Add book"
         submitAction="create"

@@ -7,7 +7,7 @@ export default function Nav() {
         <a href="/"> Inventory</a>
       </div>
       <div className={styles.links}>
-        <a href="/products">Products</a>
+        <a href="/books">Books</a>
         <a href="/categories">Categories</a>
       </div>
     </div>

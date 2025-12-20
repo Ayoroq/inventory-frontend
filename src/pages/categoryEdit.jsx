@@ -1,4 +1,4 @@
-export default function PategoryEdit() {
+export default function CategoryEdit() {
     return (
         <div>
             <h1>Category Edit</h1>

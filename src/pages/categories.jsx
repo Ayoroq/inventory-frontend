@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "../styles.module.css";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
+
 export default function Categories() {
   const [categories, setCategories] = useState([]);
   useEffect(() => {

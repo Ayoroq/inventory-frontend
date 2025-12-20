@@ -1,10 +1,10 @@
-import Home from "../pages/home";
-import Products from "../pages/products";
-import Categories from "../pages/categories";
-import ProductEdit from "../pages/productEdit";
-import ProductCreate from "../pages/productCreate";
-import CategoryEdit from "../pages/categoryEdit";
-import ErrorPage from "../pages/error";
+import Home from "../pages/Home";
+import Books from "../pages/Books";
+import Categories from "../pages/Categories";
+import BookEdit from "../pages/BookEdit";
+import BookCreate from "../pages/BookCreate";
+import CategoryEdit from "../pages/CategoryEdit";
+import ErrorPage from "../pages/Error";
 import App from "../App";
 
 const route = [
@@ -18,20 +18,20 @@ const route = [
         element: <Home />,
       },
       {
-        path: "products",
-        element: <Products />,
+        path: "books",
+        element: <Books />,
       },
       {
-        path: "products/new",
-        element: <ProductCreate />,
+        path: "books/new",
+        element: <BookCreate />,
       },
       {
         path: "categories",
         element: <Categories />,
       },
       {
-        path: "products/edit/:id",
-        element: <ProductEdit />,
+        path: "books/edit/:id",
+        element: <BookEdit />,
       },
       {
         path: "categories/:id",

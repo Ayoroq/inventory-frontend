@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../styles.module.css";
 
-export default function ProductForm({ initialData, onSubmit, submitButtonText, submitAction }) {
+export default function BookForm({ initialData, onSubmit, submitButtonText, submitAction }) {
   const [formData, setFormData] = useState({
     name: "",
     quantity: 0,

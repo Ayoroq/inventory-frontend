@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import styles from "../styles.module.css";
-import ProductForm from "../components/ProductForm.jsx";
+import BookForm from "../components/BookForm.jsx";
 
-export default function ProductEdit() {
+export default function BookEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
@@ -13,7 +13,7 @@ export default function ProductEdit() {
     async function fetchProduct() {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/products/${id}`
+          `${import.meta.env.VITE_BACKEND_URL}/books/${id}`
         );
 
         if (response.status === 404) {
@@ -39,7 +39,7 @@ export default function ProductEdit() {
   async function submitHandler(formData) {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/products/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/books/${id}`,
         {
           method: "PUT",
           headers: {
@@ -58,7 +58,7 @@ export default function ProductEdit() {
       console.log(error);
       alert("Failed to update book.");
     }
-  };
+  }
 
   return (
     <>
@@ -69,7 +69,7 @@ export default function ProductEdit() {
       ) : (
         <div className={styles.editContainer}>
           <h1>Edit Book: {product.name}</h1>
-          <ProductForm
+          <BookForm
             initialData={product}
             onSubmit={submitHandler}
             submitButtonText="Save Changes"
