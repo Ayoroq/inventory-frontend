@@ -6,6 +6,7 @@ export default function CategoryForm({
   onSubmit,
   submitButtonText,
   submitAction,
+  error,
 }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -41,6 +42,13 @@ export default function CategoryForm({
           onChange={handleChange}
         />
       </p>
+      {error && (
+        <p className={styles.error}>
+          {error.map((err) => (
+            <span key={err.path}>{err.msg}</span>
+          ))}
+        </p>
+      )}
       <button
         className={`${styles.formActionButton} ${styles[submitAction]}`}
         type="submit"

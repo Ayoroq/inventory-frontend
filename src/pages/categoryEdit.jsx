@@ -5,9 +5,9 @@ import styles from "../styles.module.css";
 
 export default function CategoryEdit() {
   const { id } = useParams();
-  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [category, setCategory] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchCategory() {
@@ -45,7 +45,9 @@ export default function CategoryEdit() {
           body: JSON.stringify(formData),
         }
       );
+      const data = await response.json();
       if (!response.ok) {
+        setError(data.errors);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       navigate("/categories");
@@ -63,6 +65,7 @@ export default function CategoryEdit() {
         onSubmit={submitHandler}
         submitButtonText="Update Category"
         submitAction="edit"
+        error={error}
       />
     </div>
   );

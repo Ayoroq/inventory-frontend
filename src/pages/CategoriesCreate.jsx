@@ -1,8 +1,10 @@
 import CategoryForm from "../components/CategoryForm"
 import { useNavigate } from "react-router";
+import {useState} from "react";
 
 export default function CategoriesCreate() {
     const navigate = useNavigate();
+    const [error, setError] = useState(null);
    async function submitHandler(formData) {
     try {
       const response = await fetch(
@@ -15,7 +17,9 @@ export default function CategoriesCreate() {
           body: JSON.stringify(formData),
         }
       );
+      const data = await response.json();
       if (!response.ok) {
+        setError(data.errors);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       navigate("/categories");
@@ -31,7 +35,9 @@ export default function CategoriesCreate() {
                 initialData={{}}
                 onSubmit={submitHandler}
                 submitButtonText="Create Category"
-                submitAction="create" />
+                submitAction="create"
+                error={error}
+            />
         </div>
     )
 }
