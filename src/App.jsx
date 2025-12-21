@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import Nav from "./components/Nav.jsx";
+import Nav from "./components/Nav";
 import "./App.css";
 
 function App() {
