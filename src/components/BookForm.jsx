@@ -5,6 +5,7 @@ export default function BookForm({
   initialData,
   onSubmit,
   submitButtonText,
+  error,
   submitAction,
 }) {
   const [formData, setFormData] = useState({
@@ -85,6 +86,13 @@ export default function BookForm({
           onChange={handleChange}
         />
       </p>
+      {error && Array.isArray(error) &&<ul className={styles.error}>
+        {error.map((err) => (<li key={err.path}>{err.msg}</li>
+        ))}
+      </ul>}
+      {error && typeof error === 'string' &&<p className={styles.error}>
+        {error}
+      </p>}
       <button
         className={`${styles.formActionButton} ${styles[submitAction]}`}
         type="submit"
