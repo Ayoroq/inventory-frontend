@@ -3,7 +3,7 @@ import Books from "../pages/Books.jsx";
 import Categories from "../pages/Categories.jsx";
 import BookEdit from "../pages/BookEdit.jsx";
 import BookCreate from "../pages/BookCreate.jsx";
-import CategoryEdit from "../pages/CategoryEdit.jsx";
+import CategoryEdit from "../pages/CategoriesEdit.jsx";
 import CategoriesCreate from "../pages/CategoriesCreate.jsx";
 import ErrorPage from "../pages/Error.jsx";
 import App from "../App.jsx";
