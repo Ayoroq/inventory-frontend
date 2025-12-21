@@ -1,12 +1,12 @@
-import Home from "../pages/Home";
-import Books from "../pages/Books";
-import Categories from "../pages/Categories";
-import BookEdit from "../pages/BookEdit";
-import BookCreate from "../pages/BookCreate";
-import CategoryEdit from "../pages/CategoryEdit";
-import CategoriesCreate from "../pages/CategoriesCreate";
-import ErrorPage from "../pages/Error";
-import App from "../App";
+import Home from "../pages/Home.jsx";
+import Books from "../pages/Books.jsx";
+import Categories from "../pages/Categories.jsx";
+import BookEdit from "../pages/BookEdit.jsx";
+import BookCreate from "../pages/BookCreate.jsx";
+import CategoryEdit from "../pages/CategoryEdit.jsx";
+import CategoriesCreate from "../pages/CategoriesCreate.jsx";
+import ErrorPage from "../pages/Error.jsx";
+import App from "../App.jsx";
 
 const route = [
   {
