@@ -8,6 +8,7 @@ export default function BookEdit() {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchProduct() {
@@ -48,15 +49,15 @@ export default function BookEdit() {
           body: JSON.stringify(formData),
         }
       );
-
+      const data = await response.json();
       if (!response.ok) {
+        setError(data.error || data.errors || "An error occurred in the request.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       navigate("/books");
     } catch (error) {
       console.log(error);
-      alert("Failed to update book.");
     }
   }
 
@@ -74,6 +75,7 @@ export default function BookEdit() {
             onSubmit={submitHandler}
             submitButtonText="Save Changes"
             submitAction="edit"
+            error={error}
           />
         </div>
       )}
