@@ -19,27 +19,27 @@ const route = [
         element: <Home />,
       },
       {
-        path: "books",
+        path: "/books",
         element: <Books />,
       },
       {
-        path: "books/new",
+        path: "/books/new",
         element: <BookCreate />,
       },
       {
-        path: "books/edit/:id",
+        path: "/books/edit/:id",
         element: <BookEdit />,
       },
       {
-        path: "categories/:id",
+        path: "/categories/:id",
         element: <CategoryEdit />,
       },
       {
-        path: "categories",
+        path: "/categories",
         element: <Categories />,
       },
       {
-        path: "categories/new",
+        path: "/categories/new",
         element: <CategoriesCreate />,
       },
     ],
